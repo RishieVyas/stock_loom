@@ -1,94 +1,78 @@
 # Stock Loom
 
-A modern React application for viewing and analyzing stock data with real-time visualizations using data from the AlphaVantage API.
+A real-time stock market tracking and visualization application that provides users with comprehensive stock data, market trends, and company information.
 
-## Features
-
-- **Real-time Stock Data**: View current and historical stock prices
-- **Interactive Charts**: Analyze stock trends with interactive charts
-- **Stock Search**: Search for stocks across NYSE and NASDAQ listings
-- **Company Information**: View detailed company metrics and information
-- **Responsive Design**: Works on desktop and mobile devices
-- **Market Leaders**: Track top performers and market cap leaders
+![Stock Loom Demo](./assets/StockLoomGIF.gif)
 
 ## Tech Stack
 
-- **Frontend**: React.js, Chart.js, React Router
+- **Frontend**: React, Chart.js, React Router, Axios
 - **Backend**: Node.js, Express
-- **API**: AlphaVantage for stock data
-- **Data**: Complete NYSE and NASDAQ stock listings
+- **APIs**: Alpha Vantage API for real-time stock data
+- **Data Visualization**: Chart.js, D3.js
 
-## Environment Variables
+## Project Goal
 
-This project uses environment variables to manage sensitive information like API keys. Before running the application, you need to set up these environment variables:
+Stock Loom aims to provide investors and financial enthusiasts with an intuitive platform to track stock market data, analyze trends, and make informed investment decisions. The application delivers real-time stock information, historical price data, and company fundamentals in a visually appealing interface.
 
-### Server Environment Variables
+## Application Flow
 
-Create a `.env` file in the root directory with the following variables:
+1. **User Interface**: Users can search for stocks, view market trends, and access detailed company information.
+2. **Data Request**: When a user selects a stock, the frontend sends a request to the backend server.
+3. **API Integration**: The backend fetches real-time and historical stock data from Alpha Vantage API.
+4. **Data Processing**: The server processes and formats the data, implementing caching to optimize performance.
+5. **Visualization**: The frontend renders the data using Chart.js to display interactive stock charts and company metrics.
 
-```
-ALPHA_VANTAGE_API_KEY=your_api_key_here
-PORT=5001
-```
+## Setup Instructions
 
-You can copy `.env.example` to `.env` and replace the values with your actual API key.
+### Prerequisites
 
-### Client Environment Variables
+- Node.js (v14.0.0 or higher)
+- npm (v6.0.0 or higher)
+- Alpha Vantage API key (get one for free at [Alpha Vantage](https://www.alphavantage.co/support/#api-key))
 
-Create a `.env` file in the `client` directory with the following variables:
-
-```
-REACT_APP_API_BASE_URL=http://localhost:5001/api
-```
-
-You can copy `client/.env.example` to `client/.env` and modify as needed.
-
-## Getting Started
+### Environment Setup
 
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/stock-viewer.git
-   cd stock-viewer
+   git clone https://github.com/RishieVyas/stock_loom.git
+   cd stock_loom
    ```
 
-2. Install all dependencies:
+2. Create a `.env` file in the root directory with your Alpha Vantage API key:
+   ```
+   ALPHA_VANTAGE_API_KEY=your_api_key_here
+   ```
+
+### Installation
+
+1. Install dependencies for both server and client:
    ```
    npm run install:all
    ```
 
-3. Start the development server:
+### Running the Application
+
+1. Start both frontend and backend servers concurrently:
    ```
    npm run dev:all
    ```
 
-4. Open your browser and navigate to:
-   ```
-   http://localhost:3000
-   ```
+2. Or run them separately:
+   - Backend server: `npm run dev` (runs on port 5001)
+   - Frontend server: `npm run client` (runs on port 3000)
 
-## Production Build
+3. Open your browser and navigate to `http://localhost:3000`
 
-To create a production build:
+## Features
 
-```
-npm run build
-```
+- Real-time stock price tracking
+- Historical price data with customizable time ranges
+- Company information and fundamentals
+- Market trends and top performers
+- Interactive charts and visualizations
+- Stock search functionality
 
-Then start the server:
+## Acknowledgments
 
-```
-npm start
-```
-
-## Security Notes
-
-- Never commit `.env` files to version control
-- Always use environment variables for sensitive information
-- Rotate API keys periodically for better security
-
-## Screenshots
-
-![Landing Page](https://github.com/user-attachments/assets/4f2f2b4a-78c4-46ec-96d5-e083dcec2e8d)
-![Stock Details](https://github.com/user-attachments/assets/b7009533-120c-47ac-931d-4a6f8ff08018)
-![Market Overview](https://github.com/user-attachments/assets/acb3e5b4-5648-4e7b-86ee-469073263e7f)
-
+- Data provided by [Alpha Vantage](https://www.alphavantage.co/)
