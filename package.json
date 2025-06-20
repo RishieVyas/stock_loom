@@ -1,0 +1,35 @@
+{
+  "name": "stock-viewer",
+  "version": "1.0.0",
+  "description": "A React application for viewing stock data and trends",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "client": "cd client && npm start",
+    "dev:all": "concurrently \"npm run dev\" \"npm run client\"",
+    "install:all": "npm install && cd client && npm install",
+    "build": "cd client && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "stocks",
+    "finance",
+    "react",
+    "node",
+    "api"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.0.3"
+  }
+}

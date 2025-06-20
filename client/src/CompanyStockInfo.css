@@ -1,0 +1,271 @@
+body {
+  background-color: #0f172a;
+  color: #e2e8f0;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  /* Ensure the body allows scrolling */
+  height: 100%;
+  overflow-y: auto;
+}
+
+html {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.stock-detail-page {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem 3rem;
+  position: relative;
+  /* Ensure the page content is scrollable */
+  overflow-y: auto;
+  height: auto;
+  min-height: 100vh;
+}
+
+/* Back Button */
+.back-button {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.5rem;
+  border-radius: 9999px;
+  background-color: #334155;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+  z-index: 10; /* Ensure button stays above other content */
+}
+
+.back-button:hover {
+  background-color: #475569;
+}
+
+.back-button svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* Stock Header */
+.stock-name {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  margin-top: 2.5rem;
+}
+
+.stock-ticker {
+  font-size: 1.5rem;
+  color: #94a3b8;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Metrics Grid */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 640px) {
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .metrics-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.metric-card {
+  background-color: #1e293b;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.metric-label {
+  color: #94a3b8;
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+  margin-top: 0;
+}
+
+.metric-value {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin: 0.25rem 0 0;
+}
+
+.positive-change {
+  color: #22c55e;
+}
+
+.negative-change {
+  color: #ef4444;
+}
+
+/* Chart Container */
+.chart-container {
+  background-color: #1e293b;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  /* Ensure chart container doesn't overflow */
+  width: auto;
+  overflow: hidden;
+}
+
+.time-range-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.range-button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: #334155;
+  color: white;
+  border: none;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.range-button:hover {
+  background-color: #475569;
+}
+
+.range-button.active {
+  background-color: #2563eb;
+  font-weight: 600;
+}
+
+.chart-wrapper {
+  width: 100%;
+  height: 500px;
+  max-height: 500px;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.loading-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  color: #94a3b8;
+  font-style: italic;
+}
+
+.error-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  color: #ef4444;
+  background-color: rgba(239, 68, 68, 0.1);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+/* Info Grid */
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.info-card {
+  background-color: #1e293b;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.info-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.stats-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  color: #94a3b8;
+}
+
+.stats-list li {
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.stats-list li span {
+  color: white;
+  font-weight: 500;
+}
+
+.company-description {
+  color: #94a3b8;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Chart styling */
+canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Scrollbar styling - make more visible */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a202c;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4a5568;
+  border-radius: 10px;
+  border: 2px solid #1a202c;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #718096;
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #4a5568 #1a202c;
+}
